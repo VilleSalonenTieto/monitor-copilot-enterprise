@@ -37,8 +37,14 @@ To get the cookie value:
 
 ### 3. Run
 
+**bash/zsh/fish:**
 ```sh
-uv run python monitor_copilot_enterprise.py
+uv run python monitor_copilot_enterprise.py | tee $(date +%Y%m%d).log
+```
+
+**PowerShell:**
+```powershell
+uv run python monitor_copilot_enterprise.py | Tee-Object -FilePath "$(Get-Date -Format 'yyyyMMdd').log"
 ```
 
 ## Output
