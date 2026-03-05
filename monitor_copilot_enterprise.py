@@ -82,11 +82,11 @@ def main():
             html = fetch_copilot_settings()
             managed_org = find_managed_org(html)
             if managed_org:
-                print(f"[{ts}] ✅ Copilot Enterprise managed by: {managed_org}")
+                print(f"[{ts}] ✅ Copilot Enterprise managed by: {managed_org}", flush=True)
             else:
-                print(f"[{ts}] ⚠️  Copilot Enterprise managing org unresolved")
+                print(f"[{ts}] ⚠️  Copilot Enterprise managing org unresolved", flush=True)
         except Exception as e:
-            print(f"[{ts}] ❌ Error: {e}")
+            print(f"[{ts}] ❌ Error: {e}", flush=True)
         time.sleep(POLL_INTERVAL)
 
 if __name__ == "__main__":
